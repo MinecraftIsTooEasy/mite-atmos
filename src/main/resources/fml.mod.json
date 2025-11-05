@@ -26,7 +26,8 @@
 	"depends": {
 		"fishmodloader": ">=3.4.0",
 		"minecraft": "1.6.4-mite",
-		"java": ">=17"
+		"java": ">=17",
+		"better_game_setting": ">=1.2.3"
 	},
 	"accessWidener": "miteatmos.accesswidener"
 }

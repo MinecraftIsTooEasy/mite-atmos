@@ -194,10 +194,12 @@ public class MAtProcessorFrequent extends MAtProcessorModel
 				break;
 			
 			case 40:
-				setValue(40, (int) Math.floor(player.swingProgress * 16));
+				boolean lookingAtBlock = (mc.objectMouseOver != null && mc.objectMouseOver.isBlock());
+				setValue(40, (int) Math.floor(!lookingAtBlock ? (player.swingProgress * 16) : 0));
 				break;
 			
 			case 41:
+
 				setValue(41, player.swingProgress != 0 ? 1 : 0); // is swinging
 				break;
 			
@@ -229,7 +231,10 @@ public class MAtProcessorFrequent extends MAtProcessorModel
 				break;
 			
 			case 48:
-				setValue(48, mc.objectMouseOver != null ? (mc.objectMouseOver.isBlock() ? 0 : 1) : -1);
+				boolean canReach = false;
+				if (mc.objectMouseOver != null && mc.objectMouseOver.isEntity())
+					canReach = player.canReachEntity(mc.objectMouseOver, EnumEntityReachContext.FOR_MELEE_ATTACK);
+				setValue(48, mc.objectMouseOver != null ? (mc.objectMouseOver.isBlock() ? 0 : (canReach ? 1 : -1)) : -1);
 				break;
 			
 			case 49:
