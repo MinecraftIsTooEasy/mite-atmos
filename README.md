@@ -1,6 +1,6 @@
 # mite-atmos
 Fork of MAtmos for Minecraft is Too Easy. Based on MAtmos release 25
-> [!INFO]
+> [!NOTE]
 > Requries [BetterGameSetting](https://github.com/MinecraftIsTooEasy/BetterGameSetting) as a dependency
 
 ## License
